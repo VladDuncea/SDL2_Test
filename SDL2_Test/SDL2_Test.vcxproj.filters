@@ -24,6 +24,18 @@
     <ClCompile Include="03_event_driven_programming.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="04_key_presses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="05_optimized_surface_loading_and_soft_stretching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="06_extension_libraries_and_loading_other_image_formats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="07_texture_loading_and_rendering.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="hello_world.bmp">
