@@ -70,12 +70,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\vs_dev_lib\SDL2_image-2.0.4\include;D:\vs_dev_lib\SDL2-2.0.9\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\vs_dev_lib\SDL2_image-2.0.4\lib\x86;D:\vs_dev_lib\SDL2-2.0.9\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\include;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\include;D:\vs_dev_lib\SDL2_image-2.0.4\include;D:\vs_dev_lib\SDL2-2.0.9\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\lib\x86;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\lib\x86;D:\vs_dev_lib\SDL2_image-2.0.4\lib\x86;D:\vs_dev_lib\SDL2-2.0.9\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>D:\vs_dev_lib\SDL2_image-2.0.4\include;D:\vs_dev_lib\SDL2-2.0.9\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\vs_dev_lib\SDL2_image-2.0.4\lib\x86;D:\vs_dev_lib\SDL2-2.0.9\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\include;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\include;D:\vs_dev_lib\SDL2_image-2.0.4\include;D:\vs_dev_lib\SDL2-2.0.9\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\lib\x86;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\lib\x86;D:\vs_dev_lib\SDL2_image-2.0.4\lib\x86;D:\vs_dev_lib\SDL2-2.0.9\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\include;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\include;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\include;C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\lib\x86;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\lib\x86;C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\lib\x86;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\include;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\include;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\include;C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\lib\x86;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\lib\x86;C:\Vlad\Programare\vs_dev_lib\SDL2-2.0.9\lib\x86;C:\Vlad\Programare\vs_dev_lib\SDL2_image-2.0.4\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -96,6 +104,10 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -125,6 +137,8 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -135,6 +149,11 @@
     <ClCompile Include="05_optimized_surface_loading_and_soft_stretching.cpp" />
     <ClCompile Include="06_extension_libraries_and_loading_other_image_formats.cpp" />
     <ClCompile Include="07_texture_loading_and_rendering.cpp" />
+    <ClCompile Include="08_geometry_rendering.cpp" />
+    <ClCompile Include="09_the_viewport.cpp" />
+    <ClCompile Include="10_color_keying.cpp" />
+    <ClCompile Include="11_clip_rendering_and_sprite_sheets.cpp" />
+    <ClCompile Include="12_color_modulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="hello_world.bmp" />

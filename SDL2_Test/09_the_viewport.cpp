@@ -1,5 +1,5 @@
 /*This source code copyrighted by Lazy Foo' Productions (2004-2019)
-and may not be redistributed without written permission. 
+and may not be redistributed without written permission.
 
 //Using SDL, SDL_image, standard IO, and strings
 #include <SDL.h>
@@ -91,14 +91,15 @@ bool loadMedia()
 	//Loading success flag
 	bool success = true;
 
-	//Load PNG texture
-	gTexture = loadTexture( "texture.png" );
+	//Load texture
+	gTexture = loadTexture( "viewport.png" );
 	if( gTexture == NULL )
 	{
 		printf( "Failed to load texture image!\n" );
 		success = false;
 	}
 
+	//Nothing to load
 	return success;
 }
 
@@ -182,10 +183,45 @@ int main( int argc, char* args[] )
 				}
 
 				//Clear screen
+				SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
 				SDL_RenderClear( gRenderer );
 
+				//Top left corner viewport
+				SDL_Rect topLeftViewport;
+				topLeftViewport.x = 0;
+				topLeftViewport.y = 0;
+				topLeftViewport.w = SCREEN_WIDTH / 2;
+				topLeftViewport.h = SCREEN_HEIGHT / 2;
+				SDL_RenderSetViewport( gRenderer, &topLeftViewport );
+				
 				//Render texture to screen
 				SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
+
+
+				//Top right viewport
+				SDL_Rect topRightViewport;
+				topRightViewport.x = SCREEN_WIDTH / 2;
+				topRightViewport.y = 0;
+				topRightViewport.w = SCREEN_WIDTH / 2;
+				topRightViewport.h = SCREEN_HEIGHT / 2;
+				SDL_RenderSetViewport( gRenderer, &topRightViewport );
+				
+				//Render texture to screen
+				SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
+
+
+				//Bottom viewport
+				SDL_Rect bottomViewport;
+				bottomViewport.x = 0;
+				bottomViewport.y = SCREEN_HEIGHT / 2;
+				bottomViewport.w = SCREEN_WIDTH;
+				bottomViewport.h = SCREEN_HEIGHT / 2;
+				SDL_RenderSetViewport( gRenderer, &bottomViewport );
+
+				
+				//Render texture to screen
+				SDL_RenderCopy( gRenderer, gTexture, NULL, NULL );
+
 
 				//Update screen
 				SDL_RenderPresent( gRenderer );
@@ -197,4 +233,4 @@ int main( int argc, char* args[] )
 	close();
 
 	return 0;
-} */
+}*/
